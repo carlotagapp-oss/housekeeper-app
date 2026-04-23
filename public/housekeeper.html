@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Housekeeper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="housekeeper">
+  <div class="app-shell">
+    <header>
+      <h1>Housekeeper</h1>
+      <p>Update room cleaning status: dirty, in process, clean, or inspected.</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="frontdesk.html">Front Desk</a>
+      </nav>
+      <div class="page-actions">
+        <a class="action-button" href="index.html">Go to Home</a>
+        <a class="action-button" href="frontdesk.html">Go to Front Desk</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="note">
+        <p><strong>Note:</strong> Use the filters to view your assignments and front desk status.</p>
+      </section>
+
+      <section class="table-section">
+        <h2>Assigned Rooms</h2>
+        <div class="controls">
+          <label>
+            Housekeeper:
+            <select id="housekeeper-filter">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Front desk status:
+            <select id="frontdesk-filter">
+              <option value="">All</option>
+              <option value="checkin">Not checked out</option>
+              <option value="checkout">Checked out</option>
+            </select>
+          </label>
+          <label>
+            Search:
+            <input id="search-input" type="search" placeholder="Room number, guest, or status..." />
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Room</th>
+                <th>Type</th>
+                <th>Assigned to</th>
+                <th>Front desk</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="rooms-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </div>
+</body>
+</html>

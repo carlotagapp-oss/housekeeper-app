@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Front Desk</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="frontdesk">
+  <div class="app-shell">
+    <header>
+      <h1>Front Desk</h1>
+      <p>Assign rooms and update cleaning status here.</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="housekeeper.html">Housekeeper</a>
+      </nav>
+      <div class="page-actions">
+        <a class="action-button" href="index.html">Go to Home</a>
+        <a class="action-button" href="housekeeper.html">Go to Housekeeper</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="note">
+        <p><strong>Important:</strong> Front desk can change room assignment and cleaning status.</p>
+      </section>
+
+      <section class="table-section add-task-section">
+        <h2>Add Room Task</h2>
+        <div class="add-room-grid">
+          <label>
+            Room Number
+            <input id="new-room-number" type="text" placeholder="e.g. 101" required />
+          </label>
+          <label>
+            Room Type
+            <select id="new-room-type" required>
+              <option value="Queen" selected>Queen</option>
+              <option value="King">King</option>
+            </select>
+          </label>
+          <label>
+            Housekeeper
+            <input id="new-room-assigned" type="text" placeholder="e.g. Emma" required />
+          </label>
+          <label>
+            Cleaning Status
+            <select id="new-room-status">
+              <option value="dirty" selected>Dirty</option>
+              <option value="in_process">In process</option>
+              <option value="clean">Clean</option>
+              <option value="inspected">Inspected</option>
+            </select>
+          </label>
+          <label>
+            Front Desk Status
+            <select id="new-room-frontdesk">
+              <option value="checkin" selected>Not checked out</option>
+              <option value="checkout">Checked out</option>
+            </select>
+          </label>
+          <button id="add-room-button" class="action-button">Add Room Task</button>
+        </div>
+      </section>
+
+      <section class="table-section">
+        <h2>Rooms</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Room</th>
+                <th>Assigned to</th>
+                <th>Status</th>
+                <th>Check</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="rooms-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </div>
+</body>
+</html>
