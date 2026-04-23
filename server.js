@@ -6,6 +6,10 @@ const port = process.env.PORT || 4000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 const rooms = [
   { id: 101, number: "101", type: "Queen", assignedTo: "Luz", roomStatus: "dirty", frontDeskStatus: "checkout" },
   { id: 102, number: "102", type: "King", assignedTo: "Rosa", roomStatus: "in_process", frontDeskStatus: "checkin" },
